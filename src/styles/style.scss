@@ -1,0 +1,39 @@
+
+input.add {
+  width: 600px;
+  height: 40px;
+  font-size: 18px;
+}
+
+button {
+  margin-left: 20px;
+  height: 40px;
+  width: 100px;
+}
+
+.oneTodo {
+  display: flex;
+  flex-direction: row;
+  background:pink;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  background:green;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+}
+
+
+.plates input + label:before {
+  content: '⬜️';
+  margin-right: 10px;
+}
+
+.plates input:checked + label:before {
+  content: '🌮';
+}
