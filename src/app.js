@@ -14,7 +14,6 @@ class App extends React.Component {
         { task: 'Call Mary', checked: true },
         { task: 'Email Jack', checked: false }
       ]
-      // checked: true
 
     }
 
@@ -30,20 +29,12 @@ class App extends React.Component {
     // })
   }
 
-  // handleCheckChange(e) {
-  //   console.log(e.target.value)
-  //   this.setState({ checked: !this.state.todos.checked })
-  // }
-
   handleSubmit(e) {
     e.preventDefault()
     console.log('submitted')
-    // this.state.todos.push(this.state.newTodo)
     const newTodoo = { task: this.state.newTodo, checked: false }
     const newListOfTodos = [ ...this.state.todos, newTodoo ]
     this.setState({ todos: newListOfTodos, newTodo: '' })
-
-
   }
 
 
@@ -68,8 +59,6 @@ class App extends React.Component {
       </>
     )
   }
-    
-  
 }
 
 ReactDOM.render(
