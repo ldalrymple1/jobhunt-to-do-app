@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Todo = ({ task }) => (
-  <li>
+const Todo = ({ task, checked }) => (
+  <li className={checked ? 'taskDone' : ''} >
     {task}
     <br></br>
   </li>

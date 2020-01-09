@@ -11,6 +11,8 @@ button {
   width: 100px;
 }
 
+
+
 .oneTodo {
   display: flex;
   flex-direction: row;
@@ -39,4 +41,8 @@ label {
 
 .plates input:checked + label:before {
   content: '🌮';
+}
+
+.taskDone {
+  text-decoration: line-through;
 }

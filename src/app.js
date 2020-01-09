@@ -45,7 +45,7 @@ class App extends React.Component {
       <>
       <h1>Lydia's Todo App</h1>
       <form onSubmit={this.handleSubmit}>
-        <input className="add" onChange={this.handleChange} name="newTodo" type="text" placeholder="e.g. Send a follow up Email to..."></input>
+        <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
         <button>Add</button>
       </form>
       <ul>
