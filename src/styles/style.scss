@@ -14,18 +14,21 @@ button {
 .oneTodo {
   display: flex;
   flex-direction: row;
-  background:pink;
+  // background:pink;
 }
 
 label {
   display: flex;
   flex-direction: row;
-  background:green;
+  // background:green;
 }
 
 .box {
   display: flex;
   align-items: center;
+  align-content: center;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 
