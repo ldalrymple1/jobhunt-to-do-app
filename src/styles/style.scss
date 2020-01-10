@@ -1,5 +1,5 @@
 
-input.add {
+input {
   width: 600px;
   height: 40px;
   font-size: 18px;
@@ -34,14 +34,14 @@ label {
 }
 
 
-.plates input + label:before {
-  content: '⬜️';
-  margin-right: 10px;
-}
+// .plates input + label:before {
+//   content: '⬜️';
+//   margin-right: 10px;
+// }
 
-.plates input:checked + label:before {
-  content: '🌮';
-}
+// .plates input:checked + label:before {
+//   content: '🌮';
+// }
 
 .taskDone {
   text-decoration: line-through;
@@ -56,4 +56,11 @@ label {
 
 .card {
   background: pink;
+}
+
+li:before {
+  content: '👾';
+  margin-left: -20px;
+  margin-right: 10px;
+  font-size: 22px;
 }

@@ -20,6 +20,7 @@ class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleChange(e) {
@@ -38,13 +39,28 @@ class App extends React.Component {
     this.setState({ todos: newListOfTodos, newTodo: '' })
   }
 
+  handleClick(chosenTodo){
+    console.log(chosenTodo, 'chosenone')
+    const todos = this.state.todos.map(todo => {
+      if (chosenTodo === todo) return { ...todo, checked: !todo.checked }
+      return { ...todo }
+    })
+    this.setState({ todos })
+  }
+
+  tasksToComplete(){
+    console.log(this.state.todos.length, 'length')
+  }
+
 
   render(){
     console.log(this.state, 're render')
-    console.log(this.state.todos)
+    console.log(this.state.todos, 'the todos in state')
+    console.log(this.state.todos.length, 'length')
+
     return (
       <>
-      <h1>Lydia's Todo App</h1>
+      <h1>Lydia's Jobhunt Dashboard</h1>
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
         <button>Add</button>
@@ -54,6 +70,7 @@ class App extends React.Component {
           <Todo 
             key={i}
             {...elem}
+            onClick={() => this.handleClick(elem)}
           />
         ))}
       </ul>

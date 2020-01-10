@@ -32,7 +32,7 @@ class News extends React.Component {
 
 
   render() {
-    console.log(this.state.headlines)
+    // console.log(this.state.headlines)
     const headlines = this.state.headlines
 
     return (
