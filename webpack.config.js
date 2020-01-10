@@ -1,6 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+require('dotenv').config()
+
 
 module.exports = {
   entry: './src/app.js',
@@ -30,6 +32,8 @@ module.exports = {
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body'
-    })
+    }),
+    new webpack.EnvironmentPlugin('NEWS_API_KEY')
+
   ]
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Todo from './Todo'
+import News from './News'
 import './styles/style.scss'
 
 class App extends React.Component {
@@ -56,6 +57,7 @@ class App extends React.Component {
           />
         ))}
       </ul>
+      <News />
       </>
     )
   }
