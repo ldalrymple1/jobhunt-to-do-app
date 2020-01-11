@@ -9,7 +9,15 @@ button {
   margin-left: 20px;
   height: 40px;
   width: 100px;
+  
 }
+
+button.bin {
+  height: 20px;
+  width: 30px;
+  text-align: center;
+}
+
 
 
 
@@ -63,4 +71,11 @@ li:before {
   margin-left: -20px;
   margin-right: 10px;
   font-size: 22px;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  // max-width: 100px;
+  margin:0;
 }

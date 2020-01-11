@@ -33,7 +33,7 @@ module.exports = {
       filename: 'index.html',
       inject: 'body'
     }),
-    new webpack.EnvironmentPlugin('NEWS_API_KEY')
+    new webpack.EnvironmentPlugin(['WEATHER_KEY','NEWS_API_KEY'] )
 
   ]
 }

@@ -1,10 +1,15 @@
 import React from 'react'
 
 const Todo = ({ task, checked, onClick }) => (
-  <li className={checked ? 'taskDone' : ''} onClick={onClick}>
-    {task}
-    <br></br>
-  </li>
+  <div className="list">
+    <li className={checked ? 'list taskDone' : 'list'} onClick={onClick}>
+      {task}
+      <br></br>
+    </li>
+    <button className="bin">🗑</button>
+
+  
+  </div>
 
 )
 

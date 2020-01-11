@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 
 import Todo from './Todo'
 import News from './News'
+import Weather from './Weather'
+
 import './styles/style.scss'
 
 class App extends React.Component {
@@ -61,6 +63,7 @@ class App extends React.Component {
     return (
       <>
       <h1>Lydia's Jobhunt Dashboard</h1>
+      <h4>calendar, delete item on to do</h4>
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
         <button>Add</button>
@@ -75,6 +78,7 @@ class App extends React.Component {
         ))}
       </ul>
       <News />
+      <Weather />
       </>
     )
   }
