@@ -114,11 +114,14 @@ class App extends React.Component {
               <Calendar 
                 value={this.state.date}
                 onChange={this.onChange}
+                size={250}
               />
-              <Clock 
-                style={{ fontSize: '60px' }}
-                format={'hh-mm'} 
-              />
+              <div className="clock-wrapper">
+                <Clock 
+                  format={'hh-mm'} 
+                />
+              </div>
+            
               <div className="weather-wrapper">
                 <Weather />
               </div>
