@@ -16,7 +16,7 @@ class News extends React.Component {
   }
 
   componentDidMount(){
-    this.getWeather()
+    // this.getWeather()
     this.getHeadlines()
   }
 
@@ -26,12 +26,12 @@ class News extends React.Component {
       .catch(err => console.log(err))
   }
   
-  getWeather(){
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=${process.env.WEATHER_KEY}`)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
+  // getWeather(){
+  //   axios.get(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=${process.env.WEATHER_KEY}`)
+  //     .then(res => console.log(res.data))
+  //     .catch(err => console.log(err))
 
-  }
+  // }
   
 
 

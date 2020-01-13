@@ -1,4 +1,17 @@
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+  background-color: lightblue;
+}
+
+.title {
+  text-align: center;
+}
+
 input {
   width: 600px;
   height: 40px;
@@ -41,6 +54,11 @@ label {
   margin-right: 20px;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+}
+
 
 // .plates input + label:before {
 //   content: '⬜️';
@@ -59,11 +77,13 @@ label {
   background: yellow;
   width: 40%;
   font-size: 10px;
+  width: 90%;
 
 }
 
 .card {
   background: pink;
+  
 }
 
 li:before {
@@ -76,6 +96,24 @@ li:before {
 .list {
   display: flex;
   flex-direction: row;
-  // max-width: 100px;
   margin:0;
+}
+
+.weather-icon {
+  height: 120px;
+  width: 120px;
+}
+
+.parent-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  background-color: rgb(186, 242, 186);
+  width: 90vw;
+}
+
+.right {
+  background-color: rgb(240, 180, 210);
 }

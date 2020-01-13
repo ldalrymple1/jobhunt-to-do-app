@@ -61,25 +61,37 @@ class App extends React.Component {
     console.log(this.state.todos.length, 'length')
 
     return (
-      <>
-      <h1>Lydia's Jobhunt Dashboard</h1>
-      <h4>calendar, delete item on to do</h4>
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
-        <button>Add</button>
-      </form>
-      <ul>
-        {this.state.todos.map((elem, i) => (
-          <Todo 
-            key={i}
-            {...elem}
-            onClick={() => this.handleClick(elem)}
-          />
-        ))}
-      </ul>
-      <News />
-      <Weather />
-      </>
+      <div>
+        <h1 className="title">Lydia's Jobhunt Dashboard</h1>
+        <h4>calendar, delete item on to do</h4>
+        <div className="parent-wrapper">
+          <div className="left">
+            <form onSubmit={this.handleSubmit}>
+              <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
+              <button>Add</button>
+            </form>
+            <ul>
+              {this.state.todos.map((elem, i) => (
+                <Todo 
+                  key={i}
+                  {...elem}
+                  onClick={() => this.handleClick(elem)}
+                />
+              ))}
+            </ul>
+            <Weather />
+          </div>
+
+          <div className="right">
+            <News />
+          </div>
+
+
+
+        </div>
+        
+ 
+      </div>
     )
   }
 }
