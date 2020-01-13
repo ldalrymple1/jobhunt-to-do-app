@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import Todo from './Todo'
 import News from './News'
 import Weather from './Weather'
+import Calendar from 'react-calendar'
 
 import './styles/style.scss'
 
@@ -16,13 +17,15 @@ class App extends React.Component {
       todos: [
         { task: 'Call Mary', checked: true },
         { task: 'Email Jack', checked: false }
-      ]
+      ],
+      date: new Date()
 
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.onChange = this.onChange.bind(this)
   }
 
   handleChange(e) {
@@ -31,6 +34,10 @@ class App extends React.Component {
     // this.setState({
     //   todos: { [e.target.name]: e.target.value } 
     // })
+  }
+
+  onChange(date) {
+    this.setState({ date })
   }
 
   handleSubmit(e) {
@@ -66,6 +73,10 @@ class App extends React.Component {
         <h4>calendar, delete item on to do</h4>
         <div className="parent-wrapper">
           <div className="left">
+            <Calendar 
+              value={this.state.date}
+              onChange={this.onChange}
+            />
             <form onSubmit={this.handleSubmit}>
               <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
               <button>Add</button>
