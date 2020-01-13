@@ -15,8 +15,8 @@ class App extends React.Component {
     this.state = {
       newTodo: '',
       todos: [
-        { task: 'Call Mary', checked: true },
-        { task: 'Email Jack', checked: false }
+        { id: 1, task: 'Call Mary', checked: true },
+        { id: 2, task: 'Email Jack', checked: false }
       ],
       date: new Date()
 
@@ -26,10 +26,10 @@ class App extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.onChange = this.onChange.bind(this)
+    this.deleteTodo = this.deleteTodo.bind(this)
   }
 
   handleChange(e) {
-    // console.log(e.target.value)
     this.setState({ newTodo: e.target.value })
     // this.setState({
     //   todos: { [e.target.name]: e.target.value } 
@@ -43,7 +43,7 @@ class App extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     console.log('submitted')
-    const newTodoo = { task: this.state.newTodo, checked: false }
+    const newTodoo = {  id: this.state.todos.length + 1, task: this.state.newTodo, checked: false }
     const newListOfTodos = [ ...this.state.todos, newTodoo ]
     this.setState({ todos: newListOfTodos, newTodo: '' })
   }
@@ -57,15 +57,32 @@ class App extends React.Component {
     this.setState({ todos })
   }
 
-  tasksToComplete(){
-    console.log(this.state.todos.length, 'length')
+  tasksToComplete(todos){
+    todos = this.state.todos
+    const remaining = todos.filter(elem => {
+      if (elem.checked === false) {
+        return elem
+      }
+    })
+    return remaining.length
+
+
+  }
+
+  deleteTodo(chosenTodo){
+    console.log('clicked')
+    console.log(chosenTodo, 'to be dellled')
+
+    const todos = this.state.todos.filter((elem => elem.id !== chosenTodo ))
+    this.setState({ todos })
+    console.log(todos, 'after render')
+
   }
 
 
   render(){
     console.log(this.state, 're render')
-    console.log(this.state.todos, 'the todos in state')
-    console.log(this.state.todos.length, 'length')
+    console.log(this.state.todos, 'the todos after render')
 
     return (
       <div>
@@ -77,6 +94,7 @@ class App extends React.Component {
               value={this.state.date}
               onChange={this.onChange}
             />
+            <h3>You have <span className="remaining-left">{this.tasksToComplete()}</span>tasks remaining</h3>
             <form onSubmit={this.handleSubmit}>
               <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
               <button>Add</button>
@@ -86,7 +104,10 @@ class App extends React.Component {
                 <Todo 
                   key={i}
                   {...elem}
-                  onClick={() => this.handleClick(elem)}
+                  handleClick={() => this.handleClick(elem)}
+                  deleteTodo={() => this.deleteTodo(elem.id)}
+                  onChange={() => this.tasksToComplete}
+
                 />
               ))}
             </ul>

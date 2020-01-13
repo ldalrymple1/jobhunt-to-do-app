@@ -28,7 +28,7 @@ class Weather extends React.Component {
 
   render(){
     const forecast = this.state.forecast
-    console.log(forecast)
+    // console.log(forecast)
     return (
       <>
         <h2>London's Weather Forecast Today</h2>
