@@ -7,9 +7,6 @@ const Todo = ({ task, checked, handleClick, deleteTodo }) => (
       <br></br>
     </li>
     <button onClick={deleteTodo} className="bin">🗑</button>
-
-
-  
   </div>
 
 )

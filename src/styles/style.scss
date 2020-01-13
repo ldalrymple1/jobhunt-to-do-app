@@ -10,18 +10,23 @@ body {
 
 .title {
   text-align: center;
+  font-size: 55px;
+  letter-spacing: 2px;;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 input {
-  width: 600px;
-  height: 40px;
-  font-size: 18px;
+  width: 90%;
+  margin: 10px;
+  // height: 40px;
+  font-size: 19px;
 }
 
 button {
   margin-left: 20px;
-  height: 40px;
+  height: 30px;
   width: 100px;
+  margin-top: 8px;;
   
 }
 
@@ -123,9 +128,29 @@ li:before {
   
   margin: 5px;
   font-size: 35px;
-  background: red;
+  background: rgba(238, 131, 187, 0.516);
   padding: 3px 12px;
   border-radius: 150px;
   
   
+}
+
+.hero {
+  height: 150px;
+}
+
+.section1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.todo-wrapper {
+  margin: 10px;
+}
+
+.weather-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }

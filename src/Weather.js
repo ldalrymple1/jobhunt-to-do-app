@@ -31,7 +31,7 @@ class Weather extends React.Component {
     // console.log(forecast)
     return (
       <>
-        <h2>London's Weather Forecast Today</h2>
+        <h3>London's Weather Forecast Today</h3>
           {forecast.map((elem, i) => (
             <div key={i}>
               <p >{elem.description}</p>

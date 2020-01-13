@@ -4629,6 +4629,11 @@ react-calendar@^2.19.2:
     prop-types "^15.6.0"
     react-lifecycles-compat "^3.0.4"
 
+react-digital-clock@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-digital-clock/-/react-digital-clock-0.1.2.tgz#e7bd33a57aa0ff6d7ca7ddb4a30cd584ecb63db2"
+  integrity sha512-fVh245QptNMiPs/GplGBiwtcQIjv9vuf7chGfD5DL+XBp36UgcKfDUkSjdR44asGVMjXdIALYHP0JjEk9MxaGw==
+
 react-dom@^16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.12.0.tgz#0da4b714b8d13c2038c9396b54a92baea633fe11"
