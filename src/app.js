@@ -108,7 +108,6 @@ class App extends React.Component {
         <div className="hero">
           <h1 className="title" onMouseMove={this.shadow}>Lydia's Jobhunt Dashboard</h1>
         </div>
-        <h4>calendar, delete item on to do</h4>
         <div className="parent-wrapper">
           <div className="left">
             <div className="section1">
@@ -116,7 +115,10 @@ class App extends React.Component {
                 value={this.state.date}
                 onChange={this.onChange}
               />
-              <Clock />
+              <Clock 
+                style={{ fontSize: '60px' }}
+                format={'hh-mm'} 
+              />
               <div className="weather-wrapper">
                 <Weather />
               </div>
