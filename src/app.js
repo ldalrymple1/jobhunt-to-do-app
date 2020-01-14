@@ -25,8 +25,8 @@ class App extends React.Component {
       date: new Date(),
       newNote: '',
       notes: [
-        { id: 1, text: 'Organise a time to go up and see Code First Girls this week' },
-        { id: 2, text: 'Collect parcel from the front desk' }
+        { id: 1, text: 'Organise a time to go up and see Code First Girls this week 💁‍♀️' },
+        { id: 2, text: 'Collect parcel from the front desk 📦' }
       ]
 
     }
@@ -67,7 +67,11 @@ class App extends React.Component {
   }
 
   addNote(e) {
-    const newNote = this.state.newNote
+    e.preventDefault()
+    const ANewNote = { id: this.state.notes.length + 1, text: this.state.newNote }
+    const newListOfNotes = [ ...this.state.notes, ANewNote ]
+    this.setState({ notes: newListOfNotes, newNote: '' })
+
 
 
 
@@ -126,7 +130,6 @@ class App extends React.Component {
     console.log(this.state, 're render')
     console.log(this.state.notes, 'the notes after render')
     const notes = this.state.notes
-
     return (
       <div>
         <div className="hero">
@@ -179,19 +182,20 @@ class App extends React.Component {
                     <i className="far fa-times-circle" onClick={() => this.deleteNote(elem.id)}></i>
      
                   </div>
-                  <h3 >{elem.text}</h3>
+                  <p >{elem.text}</p>
                 </div>
 
               ))}
+            </div>
 
-              <form onSubmit={this.addNote}>
-                <textarea onChange={this.handleChange} name="newNote" className="u-full-width" placeholder="Write your note here..." id="exampleMessage"></textarea>
-                <button className="button-primary">Add Note</button>
-              </form>
+            <form  className="note-form" onSubmit={this.addNote}>
+              <textarea onChange={this.handleChange} name="newNote" value={this.state.newNote} className="u-full-width" placeholder="Write your note here..." id="exampleMessage"></textarea>
+              <button className="button-primary">Add Note</button>
+            </form>
      
 
 
-            </div>
+            
 
 
             

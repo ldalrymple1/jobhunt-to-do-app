@@ -187,6 +187,7 @@ li:before {
 .react-calendar {
   // height: 300px;
   // margin: auto;
+  height: 290px;
 }
 
 .sticky-note {
@@ -195,6 +196,7 @@ li:before {
   width: 230px;
   padding: 30px;
   margin: 25px;
+  font-size: 20px;
 }
 
 .note-header {
@@ -207,7 +209,7 @@ li:before {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 80%;
+  // width: 80%;
 }
 
 .fa-times-circle {
@@ -257,6 +259,15 @@ span.remaining-left {
   border: 0px solid white;
   
   
+}
+
+textarea {
+  font-size: 18px;;
+}
+
+.note-form {
+  width: 70%;
+  font-size: 20px;
 }
 
 // SKELETON
