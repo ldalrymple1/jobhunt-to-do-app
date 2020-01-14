@@ -6,7 +6,7 @@ const Todo = ({ task, checked, handleClick, deleteTodo }) => (
       {task}
       <br></br>
     </li>
-    <button onClick={deleteTodo} className="bin">🗑</button>
+    <i className="far fa-times-circle"onClick={deleteTodo}></i>
   </div>
 
 )

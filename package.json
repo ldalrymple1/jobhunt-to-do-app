@@ -29,6 +29,7 @@
     "react": "^16.7.0",
     "react-calendar": "^2.19.2",
     "react-digital-clock": "^0.1.2",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-stickies": "^0.0.16"
   }
 }

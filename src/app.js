@@ -16,18 +16,28 @@ class App extends React.Component {
     this.state = {
       newTodo: '',
       todos: [
-        { id: 1, task: 'Call Mary', checked: true },
-        { id: 2, task: 'Email Jack', checked: false }
+        { id: 1, task: 'Delete LinkedIn Premium', checked: false },
+        { id: 2, task: 'Call Elen at JDX', checked: true },
+        { id: 3, task: 'Email Jack', checked: false },
+        { id: 4, task: 'Do Wes Bos JavaScript30', checked: false },
+        { id: 5, task: 'Do Codewars daily', checked: false }
       ],
-      date: new Date()
+      date: new Date(),
+      newNote: '',
+      notes: [
+        { id: 1, text: 'Organise a time to go up and see Code First Girls this week' },
+        { id: 2, text: 'Collect parcel from the front desk' }
+      ]
 
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.addNote = this.addNote.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.onChange = this.onChange.bind(this)
     this.deleteTodo = this.deleteTodo.bind(this)
+    this.deleteNote = this.deleteNote.bind(this)
     this.shadow = this.shadow.bind(this)
   }
 
@@ -42,7 +52,7 @@ class App extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ newTodo: e.target.value })
+    this.setState({ ...this.state, [e.target.name]: e.target.value })
   }
 
   onChange(date) {
@@ -54,6 +64,13 @@ class App extends React.Component {
     const newTodoo = {  id: this.state.todos.length + 1, task: this.state.newTodo, checked: false }
     const newListOfTodos = [ ...this.state.todos, newTodoo ]
     this.setState({ todos: newListOfTodos, newTodo: '' })
+  }
+
+  addNote(e) {
+    const newNote = this.state.newNote
+
+
+
   }
 
   handleClick(chosenTodo){
@@ -84,6 +101,12 @@ class App extends React.Component {
     this.setState({ todos })
   }
 
+  deleteNote(chosenNote) {
+    console.log('deleteddd and clicked')
+    const notes = this.state.notes.filter(elem => elem.id !== chosenNote)
+    this.setState({ notes })
+  }
+
   shadow(e) {
     const xWalk = Math.round(
       (e.screenX / this.width) * this.walk - this.walk / 2
@@ -101,7 +124,8 @@ class App extends React.Component {
 
   render(){
     console.log(this.state, 're render')
-    console.log(this.state.todos, 'the todos after render')
+    console.log(this.state.notes, 'the notes after render')
+    const notes = this.state.notes
 
     return (
       <div>
@@ -117,18 +141,19 @@ class App extends React.Component {
                 size={250}
               />
               <div className="clock-wrapper">
-                <Clock 
-                  format={'hh-mm'} 
-                />
-              </div>
+              
             
-              <div className="weather-wrapper">
+                <div className="weather-wrapper">
+                  <Clock 
+                    format={'hh-mm'}
+                  />
+                </div>
                 <Weather />
               </div>
             </div>
             <div className="todo-wrapper">
-              <h2>TODO LIST ✅</h2>
-              <h3>You have <span className="remaining-left">{this.tasksToComplete()}</span>tasks remaining</h3>
+              <h2 className="todo-title">TODO LIST ✅</h2>
+              <h3 className="todo-title">You have <span className="remaining-left">{this.tasksToComplete()}</span>tasks remaining</h3>
               <form onSubmit={this.handleSubmit}>
                 <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
                 <button>Add</button>
@@ -147,6 +172,27 @@ class App extends React.Component {
               </ul>
 
             </div>
+            <div className="sticky-wrapper">
+              {notes.map((elem, i) => (
+                <div key={i} className="sticky-note">
+                  <div className="note-header">
+                    <i className="far fa-times-circle" onClick={() => this.deleteNote(elem.id)}></i>
+     
+                  </div>
+                  <h3 >{elem.text}</h3>
+                </div>
+
+              ))}
+
+              <form onSubmit={this.addNote}>
+                <textarea onChange={this.handleChange} name="newNote" className="u-full-width" placeholder="Write your note here..." id="exampleMessage"></textarea>
+                <button className="button-primary">Add Note</button>
+              </form>
+     
+
+
+            </div>
+
 
             
           </div>

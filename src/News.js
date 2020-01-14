@@ -39,17 +39,18 @@ class News extends React.Component {
 
 
   render() {
-    // console.log(this.state.headlines)
+    console.log(this.state.headlines)
     const headlines = this.state.headlines
 
     return (
       <>
-      <h3>Top Headlines</h3>
+      <h3 className="headlines-title">Top Headlines</h3>
       
       <div className="headlines">
         {headlines.map((elem, i) => (
           <div className="card" key={i}>
             <h3 >{elem.title}</h3>
+            <img src={elem.urlToImage} alt={elem.title} className="news-image" />
             <a href={elem.url}><p>For more info</p></a>
           </div>
         ))}
