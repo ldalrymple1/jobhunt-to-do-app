@@ -18,9 +18,12 @@ class App extends React.Component {
       todos: [
         { id: 1, task: 'Delete LinkedIn Premium', checked: false },
         { id: 2, task: 'Call Elen at JDX', checked: true },
-        { id: 3, task: 'Email Jack', checked: false },
+        { id: 3, task: 'Follow up email to Potato', checked: false },
         { id: 4, task: 'Do Wes Bos JavaScript30', checked: false },
-        { id: 5, task: 'Do Codewars daily', checked: false }
+        { id: 5, task: 'Do Codewars daily', checked: false },
+        { id: 6, task: 'Sort out local storage for this app', checked: false },
+        { id: 7, task: 'Style this app', checked: false },
+        { id: 8, task: 'Clone project 2 and learn hooks', checked: false }
       ],
       date: new Date(),
       newNote: '',
