@@ -1,12 +1,15 @@
+// IMPORTING REACT 
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+// IMPORTING COMPONENTS
 import Todo from './Todo'
 import News from './News'
 import Weather from './Weather'
 import Calendar from 'react-calendar'
 import Clock from 'react-digital-clock'
 
+// IMPORTING STYLING
 import './styles/style.scss'
 
 class App extends React.Component {
@@ -33,7 +36,6 @@ class App extends React.Component {
       ]
 
     }
-
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.addNote = this.addNote.bind(this)
@@ -51,7 +53,6 @@ class App extends React.Component {
 
     this.text = hero.querySelector('h1')
     this.walk = 25
-
   }
 
   handleChange(e) {
@@ -74,14 +75,9 @@ class App extends React.Component {
     const ANewNote = { id: this.state.notes.length + 1, text: this.state.newNote }
     const newListOfNotes = [ ...this.state.notes, ANewNote ]
     this.setState({ notes: newListOfNotes, newNote: '' })
-
-
-
-
   }
 
   handleClick(chosenTodo){
-    // console.log(chosenTodo, 'chosenone')
     const todos = this.state.todos.map(todo => {
       if (chosenTodo === todo) return { ...todo, checked: !todo.checked }
       return { ...todo }
@@ -97,19 +93,14 @@ class App extends React.Component {
       }
     })
     return remaining.length
-
-
   }
 
   deleteTodo(chosenTodo){
-    // console.log('clicked')
-    // console.log(chosenTodo, 'to be dellled')
     const todos = this.state.todos.filter((elem => elem.id !== chosenTodo ))
     this.setState({ todos })
   }
 
   deleteNote(chosenNote) {
-    console.log('deleteddd and clicked')
     const notes = this.state.notes.filter(elem => elem.id !== chosenNote)
     this.setState({ notes })
   }
@@ -121,7 +112,6 @@ class App extends React.Component {
     const yWalk = Math.round(
       (e.screenY / this.height) * this.walk - this.walk / 2
     )
-    // console.log(xWalk, yWalk, 'x and y walks')
     this.text.style.textShadow = `
       ${xWalk}px ${yWalk}px 0 rgba(116, 114, 114, 0.379)
     `
@@ -131,15 +121,16 @@ class App extends React.Component {
 
   render(){
     console.log(this.state, 're render')
-    console.log(this.state.notes, 'the notes after render')
     const notes = this.state.notes
     return (
       <div>
         <div className="hero">
           <h1 className="title" onMouseMove={this.shadow}>Lydia's Jobhunt Dashboard</h1>
         </div>
+
         <div className="parent-wrapper">
           <div className="left">
+
             <div className="section1">
               <Calendar 
                 value={this.state.date}
@@ -147,8 +138,6 @@ class App extends React.Component {
                 size={250}
               />
               <div className="clock-wrapper">
-              
-            
                 <div className="weather-wrapper">
                   <Clock 
                     format={'hh-mm'}
@@ -157,6 +146,7 @@ class App extends React.Component {
                 <Weather />
               </div>
             </div>
+
             <div className="todo-wrapper">
               <h2 className="todo-title">TODO LIST ✅</h2>
               <h3 className="todo-title">You have <span className="remaining-left">{this.tasksToComplete()}</span>tasks remaining</h3>
@@ -176,8 +166,8 @@ class App extends React.Component {
                   />
                 ))}
               </ul>
-
             </div>
+
             <div className="sticky-wrapper">
               {notes.map((elem, i) => (
                 <div key={i} className="sticky-note">
@@ -187,7 +177,6 @@ class App extends React.Component {
                   </div>
                   <p >{elem.text}</p>
                 </div>
-
               ))}
             </div>
 
@@ -195,24 +184,14 @@ class App extends React.Component {
               <textarea onChange={this.handleChange} name="newNote" value={this.state.newNote} className="u-full-width" placeholder="Write your note here..." id="exampleMessage"></textarea>
               <button className="button-primary">Add Note</button>
             </form>
-     
 
-
-            
-
-
-            
           </div>
 
           <div className="right">
             <News />
           </div>
 
-
-
         </div>
-        
- 
       </div>
     )
   }

@@ -6,10 +6,7 @@ class Weather extends React.Component {
     super() 
     this.state = {
       forecast: []
-
     }
-    
-
   }
 
   componentDidMount(){
@@ -20,15 +17,10 @@ class Weather extends React.Component {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=${process.env.WEATHER_KEY}`)
       .then(res => this.setState({ forecast: res.data.weather }))
       .catch(err => console.log(err))
-
   }
  
-  
-
-
   render(){
     const forecast = this.state.forecast
-    // console.log(forecast)
     return (
       <>
         <h3>London's Weather Forecast Today</h3>
@@ -39,9 +31,6 @@ class Weather extends React.Component {
             </div>
           ))}
       </>
-
-    
-      
     )
   }
 }

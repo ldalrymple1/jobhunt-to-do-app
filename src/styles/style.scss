@@ -15,25 +15,13 @@ body {
   font-size: 55px;
   letter-spacing: 2px;;
   font-family: 'Passion One', cursive;
-  // background: black;
-  // color: rgb(243, 164, 44);
-  // color: grey;
 }
 
 input {
   width: 90%;
   margin: 10px;
-  // height: 40px;
   font-size: 19px;
 }
-
-// button {
-//   margin-left: 20px;
-//   height: 30px;
-//   width: 100px;
-//   margin-top: 8px;;
-  
-// }
 
 button.bin {
   height: 20px;
@@ -41,13 +29,9 @@ button.bin {
   text-align: center;
 }
 
-
-
-
 .oneTodo {
   display: flex;
   flex-direction: row;
-  // background:pink;
 }
 
 label {
@@ -64,40 +48,17 @@ label {
   margin-right: 20px;
 }
 
-// form {
-//   display: flex;
-//   flex-direction: row;
-// }
-
-
-// .plates input + label:before {
-//   content: '⬜️';
-//   margin-right: 10px;
-// }
-
-// .plates input:checked + label:before {
-//   content: '🌮';
-// }
-
 .taskDone {
   text-decoration: line-through;
 }
 
 .headlines {
   background: yellow;
-  // width: 40%;
   font-size: 13px;
-  // width: 70%;
-  // margin: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  // margin-left: 80px;
-  
-
-  
-
 }
 
 h3 {
@@ -135,8 +96,6 @@ li:before {
   flex-direction: row;
 }
 
-
-
 .right {
   background-color: rgb(186, 242, 186);
   display: flex;
@@ -146,8 +105,6 @@ li:before {
   width: 40%;
 
 }
-
-
 
 .hero {
   height: 150px;
@@ -170,10 +127,6 @@ li:before {
   width: 40%;
 }
 
-
-
-
-
 .headlines-title {
   font-size: 30px;;
   text-decoration: underline;
@@ -185,8 +138,6 @@ li:before {
 }
 
 .react-calendar {
-  // height: 300px;
-  // margin: auto;
   height: 290px;
 }
 
@@ -209,7 +160,6 @@ li:before {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  // width: 80%;
 }
 
 .fa-times-circle {
@@ -232,9 +182,6 @@ li:before {
 
 .clock-wrapper {
   width: 2000px;
-  // background: black;
-  // height: 20px;
-  // border-radius: 10px;;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -249,16 +196,12 @@ span {
 }
 
 span.remaining-left {
-  
-  
   margin: 5px;
   font-size: 35px;
   background: rgba(238, 131, 187, 0.516);
   padding: 3px 12px;
   border-radius: 150px;
   border: 0px solid white;
-  
-  
 }
 
 textarea {
