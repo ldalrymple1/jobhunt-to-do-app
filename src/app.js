@@ -125,7 +125,8 @@ class App extends React.Component {
     return (
       <div>
         <div className="hero">
-          <h1 className="title" onMouseMove={this.shadow}>Lydia's Jobhunt Dashboard</h1>
+          <h1 className="title" >Lydia's </h1>
+          <h1 className="title" >Jobhunt Dashboard</h1>
         </div>
 
         <div className="parent-wrapper">
@@ -151,8 +152,9 @@ class App extends React.Component {
               <h2 className="todo-title">TODO LIST ✅</h2>
               <h3 className="todo-title">You have <span className="remaining-left">{this.tasksToComplete()}</span>tasks remaining</h3>
               <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input>
-                <button>Add</button>
+                <div className="todo-form">
+                  <input onChange={this.handleChange} name="newTodo" value={this.state.newTodo} type="text" placeholder="e.g. Send a follow up Email to..."></input><button className="todo-button">Add</button>
+                </div>
               </form>
               <ul>
                 {this.state.todos.map((elem, i) => (
@@ -175,14 +177,14 @@ class App extends React.Component {
                     <i className="far fa-times-circle" onClick={() => this.deleteNote(elem.id)}></i>
      
                   </div>
-                  <p >{elem.text}</p>
+                  <p className="note-text">{elem.text}</p>
                 </div>
               ))}
             </div>
 
             <form  className="note-form" onSubmit={this.addNote}>
               <textarea onChange={this.handleChange} name="newNote" value={this.state.newNote} className="u-full-width" placeholder="Write your note here..." id="exampleMessage"></textarea>
-              <button className="button-primary">Add Note</button>
+              <button className="button">Add Note</button>
             </form>
 
           </div>

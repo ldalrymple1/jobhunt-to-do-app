@@ -1,24 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans+Condensed:300|Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin:600|Istok+Web:700|Open+Sans:300,400&display=swap');
+
+$bluebg: rgba(25, 2, 202, 0.653);
+$pink: rgb(223, 111, 245);
+$offwhite: rgba(245, 226, 243, 0.899);
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 20px;
-  background-color: lightblue;
-  font-family: 'Open Sans Condensed', sans-serif;
+  margin: 55px;
+  background-color: rgb(237, 240, 186);
+  font-family:'Open Sans', sans-serif;
+  background-image: url('https://image.freepik.com/free-photo/old-wooden-texture-background-vintage_55716-1138.jpg');
+
+  margin-top: 5px;
 }
 
 .title {
   text-align: center;
-  font-size: 55px;
+  font-size: 75px;
   letter-spacing: 2px;;
   font-family: 'Passion One', cursive;
+  // color: $bluebg;
+  color:$offwhite;
+  margin: 0;
+  margin-top: 0;
+  text-shadow: 1px 1px 1px black;
+  
 }
 
 input {
-  width: 90%;
+  width: 65%;
   margin: 10px;
   font-size: 19px;
 }
@@ -53,7 +67,7 @@ label {
 }
 
 .headlines {
-  background: yellow;
+  // background: yellow;
   font-size: 13px;
   display: flex;
   flex-direction: row;
@@ -63,12 +77,22 @@ label {
 
 h3 {
   text-align: center;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 300;
+  margin-top: 20px;
+  text-decoration: none;
 }
 
 .card {
-  background: pink;
-  max-width: 200px;
+  // background: pink;
+  max-width: 240px;
+  border: 2px solid black;
+  background-color: $offwhite;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 300;
   
 }
 
@@ -77,13 +101,19 @@ li:before {
   margin-left: -20px;
   margin-right: 10px;
   font-size: 22px;
+  
 }
 
 .list {
   display: flex;
   flex-direction: row;
   margin:0;
-  font-size: 25px;
+  font-size: 15px;
+  margin-left: 30px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0px;;
 }
 
 .weather-icon {
@@ -96,13 +126,24 @@ li:before {
   flex-direction: row;
 }
 
+.weather-wrap {
+  background-color: $offwhite;
+  margin-top: 15px;
+  margin-left: 8px;;
+
+}
 .right {
-  background-color: rgb(186, 242, 186);
+  background-color: $bluebg;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   width: 40%;
+  margin-top: 10px;
+
+  // border: 2px solid white;
+  
+  
 
 }
 
@@ -118,6 +159,7 @@ li:before {
 
 .todo-wrapper {
   margin: 10px;
+  background-color: $offwhite;
 }
 
 .weather-wrapper {
@@ -128,17 +170,25 @@ li:before {
 }
 
 .headlines-title {
-  font-size: 30px;;
-  text-decoration: underline;
+  font-size: 38px;;
+  // text-decoration: underline;
+  background-color: $offwhite;
+  padding: 8px;
 
 }
 
 .todo-title {
-  font-size: 30px;;
+  font-size: 20px;
+  text-align: center;
+  
+
 }
 
 .react-calendar {
   height: 290px;
+  width: 500px;
+  background: $offwhite;
+  margin-left: 10px;;
 }
 
 .sticky-note {
@@ -148,7 +198,10 @@ li:before {
   padding: 30px;
   margin: 25px;
   font-size: 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
+
+
 
 .note-header {
   display: flex;
@@ -171,13 +224,15 @@ li:before {
 .news-image {
   max-height: 70%;
   max-width: 90%;
+  margin: auto;
 }
 
 .left {
-  background-color: rgb(186, 242, 186);
+  background-color: $bluebg;;
   width: 60%;
   padding-top: 20px;
   padding-left: 20px;;
+  margin-top: 10px;
 }
 
 .clock-wrapper {
@@ -186,13 +241,15 @@ li:before {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  
 }
 
 span {
-  font-size: 35px;
-  background: black;
-  border: 5px solid white;
-  width: 1000px;
+  font-size: 26px;
+  background: $offwhite;
+  border: 2px solid black;
+  // width: 100px;
+  color: $bluebg;
 }
 
 span.remaining-left {
@@ -211,6 +268,22 @@ textarea {
 .note-form {
   width: 70%;
   font-size: 20px;
+  margin-left: 30px;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.todo-button {
+  margin-top: 10px;
+}
+
+.note-text {
+  font-family:'Open Sans', sans-serif;
+  font-weight: 100;
+
 }
 
 // SKELETON
@@ -556,24 +629,24 @@ td:last-child {
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-button,
-.button {
-  margin-bottom: 1rem; }
-input,
-textarea,
-select,
-fieldset {
-  margin-bottom: 1.5rem; }
-pre,
-blockquote,
-dl,
-figure,
-table,
-p,
-ul,
-ol,
-form {
-  margin-bottom: 2.5rem; }
+// button,
+// .button {
+//   margin-bottom: 1rem; }
+// input,
+// textarea,
+// select,
+// fieldset {
+//   margin-bottom: 1.5rem; }
+// pre,
+// blockquote,
+// dl,
+// figure,
+// table,
+// p,
+// ul,
+// ol,
+// form {
+//   margin-bottom: 2.5rem; }
 
 
 /* Utilities

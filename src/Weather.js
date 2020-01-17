@@ -22,15 +22,15 @@ class Weather extends React.Component {
   render(){
     const forecast = this.state.forecast
     return (
-      <>
+      <div className="weather-wrap">
         <h3>London's Weather Forecast Today</h3>
-          {forecast.map((elem, i) => (
-            <div key={i}>
-              <p >{elem.description}</p>
-              {elem.main === 'Clouds' ? <img className="weather-icon" src="./assets/cloudy.png" /> : elem.main === 'Rain' ? <img className="weather-icon" src="./assets/rain.png" /> : elem.main === 'Drizzle' ? <img className="weather-icon" src="./assets/rain.png" /> : elem.main === 'Snow' ? <img className="weather-icon" src="./assets/snow.png" /> : elem.main === 'Clear' ? <img className="weather-icon" src="./assets/clear.png" /> : <img src={elem.icon} />} 
-            </div>
-          ))}
-      </>
+        {forecast.map((elem, i) => (
+          <div key={i}>
+            <p >{elem.description}</p>
+            {elem.main === 'Clouds' ? <img className="weather-icon" src="./assets/cloudy.png" /> : elem.main === 'Rain' ? <img className="weather-icon" src="./assets/rain.png" /> : elem.main === 'Drizzle' ? <img className="weather-icon" src="./assets/rain.png" /> : elem.main === 'Snow' ? <img className="weather-icon" src="./assets/snow.png" /> : elem.main === 'Clear' ? <img className="weather-icon" src="./assets/clear.png" /> : <img src={elem.icon} />} 
+          </div>
+        ))}
+      </div>
     )
   }
 }
