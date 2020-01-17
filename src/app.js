@@ -148,8 +148,8 @@ class App extends React.Component {
               </div>
             </div>
 
+            <h2 className="headlines-title todo">Todo List ✅</h2>
             <div className="todo-wrapper">
-              <h2 className="todo-title">TODO LIST ✅</h2>
               <h3 className="todo-title">You have <span className="remaining-left">{this.tasksToComplete()}</span>tasks remaining</h3>
               <form onSubmit={this.handleSubmit}>
                 <div className="todo-form">

@@ -23,7 +23,7 @@ class Weather extends React.Component {
     const forecast = this.state.forecast
     return (
       <div className="weather-wrap">
-        <h3>London's Weather Forecast Today</h3>
+        <h3 className="weather-title">London's Weather Forecast Today</h3>
         {forecast.map((elem, i) => (
           <div key={i}>
             <p >{elem.description}</p>

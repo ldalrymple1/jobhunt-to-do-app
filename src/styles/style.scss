@@ -4,6 +4,7 @@
 $bluebg: rgba(25, 2, 202, 0.653);
 $pink: rgb(223, 111, 245);
 $offwhite: rgba(245, 226, 243, 0.899);
+$darkpink: #e9a8d2;
 
 * {
   box-sizing: border-box;
@@ -24,10 +25,11 @@ body {
   letter-spacing: 2px;;
   font-family: 'Passion One', cursive;
   // color: $bluebg;
-  color:$offwhite;
+  // color:rgba(244, 191, 238, 0.899);
+  color: #e9a8d2;
   margin: 0;
   margin-top: 0;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 2px 1px 1px black;
   
 }
 
@@ -73,6 +75,8 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  font-weight: 300;
+
 }
 
 h3 {
@@ -126,6 +130,8 @@ li:before {
   flex-direction: row;
 }
 
+
+
 .weather-wrap {
   background-color: $offwhite;
   margin-top: 15px;
@@ -172,9 +178,18 @@ li:before {
 .headlines-title {
   font-size: 38px;;
   // text-decoration: underline;
-  background-color: $offwhite;
+  background-color: #e9a8d2;
   padding: 8px;
+  font-family:'Open Sans', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  width: 300px;
 
+
+}
+
+.headlines-title.todo {
+  margin-left: 225px;
 }
 
 .todo-title {
@@ -189,6 +204,7 @@ li:before {
   width: 500px;
   background: $offwhite;
   margin-left: 10px;;
+  margin-top: 12px;
 }
 
 .sticky-note {
@@ -196,7 +212,9 @@ li:before {
   height: 230px;
   width: 230px;
   padding: 30px;
-  margin: 25px;
+  margin: 12px;
+  margin-bottom: 40px;;
+  margin-left: 40px;;
   font-size: 20px;
   font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -246,10 +264,10 @@ li:before {
 
 span {
   font-size: 26px;
-  background: $offwhite;
+  background: $darkpink;
   border: 2px solid black;
   // width: 100px;
-  color: $bluebg;
+  color: black;
 }
 
 span.remaining-left {
@@ -284,6 +302,12 @@ textarea {
   font-family:'Open Sans', sans-serif;
   font-weight: 100;
 
+}
+
+.weather-title {
+  background-color: $darkpink;
+  text-align: center;
+  padding: 0
 }
 
 // SKELETON
