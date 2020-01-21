@@ -32,7 +32,7 @@ class App extends React.Component {
       newNote: '',
       notes: [
         { id: 1, text: 'Organise a time to go up and see Code First Girls this week 💁‍♀️' },
-        { id: 2, text: 'Collect parcel from the front desk 📦' }
+        { id: 2, text: 'Collect parcel from the reception front desk 📦' }
       ]
 
     }
